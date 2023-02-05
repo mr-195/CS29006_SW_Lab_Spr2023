@@ -16,13 +16,15 @@ class Dataset(object):
             transforms: list of transforms (class instances)
                         For instance, [<class 'RandomCrop'>, <class 'Rotate'>]
         '''
+        self.annotations_file = annotation_file
+        self.transforms = transforms
      
 
     def __len__(self):
         '''
             return the number of data points in the dataset
         '''
-
+        
     
     def __getann__(self, idx):
         '''

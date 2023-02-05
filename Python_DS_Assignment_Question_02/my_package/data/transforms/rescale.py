@@ -13,6 +13,7 @@ class RescaleImage(object):
             matched to output_size. If int, smaller of image edges is matched
             to output_size keeping aspect ratio the same.
         '''
+        self.output_size = output_size
 
 
     def __call__(self, image):
@@ -25,3 +26,8 @@ class RescaleImage(object):
 
             Note: You do not need to resize the bounding boxes. ONLY RESIZE THE IMAGE.
         '''
+        if type(self.output_size) is tuple:
+            image = image.thumbnail(self.output_size)
+        else:
+            image = image.thumbnail(self.output_size,self.output_size)
+        return image

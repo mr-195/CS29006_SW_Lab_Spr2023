@@ -18,9 +18,7 @@ def experiment(annotation_file, captioner, transforms, outputs):
     '''
 
     #Create the instances of the dataset, download
-
-
-    #Print image names and their captions from annotation file using dataset object
+     #Print image names and their captions from annotation file using dataset object
 
 
     #Download images to ./data/imgs/ folder using download object

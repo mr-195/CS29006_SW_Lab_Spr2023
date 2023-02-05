@@ -1,5 +1,5 @@
 from PIL import Image
-import requests
+import urllib.request
 from io import BytesIO
 
 class Download(object):
@@ -13,3 +13,4 @@ class Download(object):
             path: download path with the file name
             url: required image URL
         '''
+        urllib.request.urlretrieve(url, path)

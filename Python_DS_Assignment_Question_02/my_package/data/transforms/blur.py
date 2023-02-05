@@ -1,5 +1,6 @@
-#Imports
+# Imports
 from PIL import Image, ImageFilter
+
 
 class BlurImage(object):
     '''
@@ -11,7 +12,7 @@ class BlurImage(object):
             Arguments:
             radius (int): radius to blur
         '''
-  
+        self.radius = radius
 
     def __call__(self, image):
         '''
@@ -22,3 +23,12 @@ class BlurImage(object):
             image (numpy array or PIL Image)
         '''
 
+        # Opens a image in RGB mode
+
+        im = Image.open("geek.jpg")
+
+        # Blurring the image
+        im1 = im.filter(ImageFilter.GaussianBlur(4))
+
+        # Shows the image in image viewer
+        im1.show()
